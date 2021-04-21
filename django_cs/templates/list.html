@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义表返回页面</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>valueA</th>
+        <th>valueB</th>
+        <th>result</th>
+    </tr>
+
+    </thead>
+
+     {% for data in data %}
+    <tr>
+        <th>{{ data.value_a }}</th>
+        <th>{{ data.value_b }}</th>
+        <th>{{ data.result }}</th>
+    </tr>
+    {% endfor %}
+
+
+</table>
+<form action="del" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="清库">
+
+    </form>
+</body>
+</html>
